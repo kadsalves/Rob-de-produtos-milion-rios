@@ -1,0 +1,55 @@
+:root{color-scheme:light;font:16px/1.5 system-ui,-apple-system,sans-serif;color:#17233b;background:#f3f5f8;--ink:#17233b;--muted:#536179;--border:#d7deea;--action:#154cac;--navy:#101d32}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{letter-spacing:-.035em;line-height:1.15}
+button,input,textarea{font:inherit}
+button{cursor:pointer}
+a{color:var(--action)}
+:focus-visible{outline:3px solid #487be0;outline-offset:3px}
+[hidden]{display:none!important}
+.frame{width:min(1160px,calc(100% - 36px));margin-inline:auto}
+.top{background:var(--navy);color:#fff}
+.bar{display:flex;justify-content:space-between;align-items:center;min-height:70px;gap:8px;flex-wrap:wrap;padding-block:8px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:760}
+.mark{position:relative;display:grid;place-items:center;width:29px;height:21px;border:2px solid #9dc3ff;border-radius:74% 48%}
+.mark::after{content:"";width:9px;height:9px;border-radius:50%;background:#9dc3ff}
+.demo{font-size:.88rem;border:1px solid #55647e;padding:4px 9px;border-radius:99px;color:#e6eefc}
+.intro{background:linear-gradient(115deg,#16284b,#203f73);color:white;border-radius:20px;margin-block:24px 30px;padding:clamp(25px,6vw,56px)}
+.intro h1{font-size:clamp(2rem,6vw,3.9rem);font-weight:780}
+.intro p{color:#dce7ff;margin-top:8px}
+.toolbar{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:14px}
+.toolbar h2,dialog h2{font-size:clamp(1.27rem,4vw,1.65rem)}
+.toolbar p,.muted,.marketplace,footer{color:var(--muted)}
+.toolbar label{display:grid;gap:4px;font-size:.9rem;font-weight:650}
+input,textarea{color:var(--ink);border:1px solid #a8b4cb;background:#fff;border-radius:8px;padding:8px 11px;width:100%}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,245px),1fr));gap:13px}
+.card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.card-visual{display:grid;place-items:center;min-height:88px;position:relative;background:#e5ebf8}
+.card:nth-child(3n+2) .card-visual{background:#e7edf3}
+.card:nth-child(3n) .card-visual{background:#e1edf5}
+.product-icon{font-size:2.6rem;line-height:1}
+.discount{position:absolute;top:8px;right:9px;padding:3px 7px;border-radius:6px;background:white;color:#124083;font-weight:700;font-size:.88rem}
+.card-body{display:grid;grid-template-rows:auto 1fr auto auto;flex:1;gap:8px;padding:13px}
+.marketplace{font-size:.84rem}
+.card h3{font-size:1.08rem}
+.prices{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+.prices strong{font-size:1.2rem}
+.prices s{font-size:.85rem;color:var(--muted)}
+.primary,.secondary,.angles button{min-height:44px;line-height:1.25;border-radius:8px;padding:8px 12px;font-weight:680;border:1px solid var(--border)}
+.primary{background:var(--action);border-color:var(--action);color:#fff}
+.primary:hover{background:#123f91}
+.secondary,.angles button{background:#fff;color:var(--ink)}
+footer{font-size:.9rem;margin:18px 0 30px}
+dialog{width:min(620px,calc(100% - 22px));max-height:90dvh;border:1px solid var(--border);border-radius:17px;color:var(--ink);padding:clamp(13px,4vw,25px)}
+dialog::backdrop{background:#101d32bb}
+.modal-head{display:flex;justify-content:space-between;align-items:start;gap:8px}
+.modal-head .muted{font-size:.9rem;margin-bottom:4px}
+.angles{display:flex;gap:6px;flex-wrap:wrap;margin:15px 0 10px}
+.angles [aria-pressed=true]{background:var(--navy);border-color:var(--navy);color:white}
+.post{background:#ecf1fa;padding:13px;border-radius:9px;margin-bottom:14px}
+.post a{display:inline-block;margin-top:8px}
+#message:not(:empty){margin:8px 0;color:#123f91}
+#manual{display:grid;gap:5px}
+@media(max-width:500px){.frame{width:calc(100% - 24px)}.toolbar{align-items:stretch;flex-direction:column}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.card-body{padding:8px}.card .primary{padding-inline:4px;font-size:.88rem}}
+@media(max-width:335px){.grid{grid-template-columns:1fr}}

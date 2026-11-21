@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101d32">
+  <title>Ofertas | Olho do Mercado</title>
+  <meta name="description" content="Painel de demonstração do Olho do Mercado para afiliados.">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <header class="top">
+    <div class="frame bar">
+      <a class="brand" href="./" aria-label="Olho do Mercado, início"><span class="mark" aria-hidden="true"></span>Olho do Mercado</a>
+      <span class="demo">Modo demonstração</span>
+    </div>
+  </header>
+  <main class="frame">
+    <section class="intro" aria-labelledby="page-title">
+      <h1 id="page-title">Painel de ofertas</h1>
+      <p>Escolha um produto e prepare o texto para divulgar.</p>
+    </section>
+    <section aria-labelledby="offer-list">
+      <div class="toolbar">
+        <div><h2 id="offer-list">Ofertas disponíveis</h2><p id="count" role="status"></p></div>
+        <label for="search">Buscar produto<input id="search" type="search" placeholder="Ex.: cafeteira"></label>
+      </div>
+      <div id="offers" class="grid"></div>
+      <p id="empty" hidden>Nenhuma oferta corresponde à busca.</p>
+      <noscript>Ative o JavaScript para consultar as ofertas de demonstração.</noscript>
+    </section>
+    <footer>Ofertas, preços e descontos fictícios para teste.</footer>
+  </main>
+
+  <template id="offer-template">
+    <article class="card">
+      <div class="card-visual"><span class="product-icon" aria-hidden="true"></span><span class="discount"></span></div>
+      <div class="card-body">
+        <p class="marketplace"></p>
+        <h3></h3>
+        <p class="prices"><strong></strong><s></s></p>
+        <button class="primary" type="button">Usar esta oferta</button>
+      </div>
+    </article>
+  </template>
+
+  <dialog id="preview" aria-labelledby="product-title">
+    <div class="modal-head">
+      <div><p class="muted">Prévia da publicação</p><h2 id="product-title"></h2></div>
+      <form method="dialog"><button class="secondary close">Fechar</button></form>
+    </div>
+    <div id="angles" class="angles" role="group" aria-label="Estilo do texto">
+      <button type="button" data-angle="emocional" aria-pressed="true">Emocional</button>
+      <button type="button" data-angle="urgencia" aria-pressed="false">Urgência</button>
+      <button type="button" data-angle="barganha" aria-pressed="false">Barganha</button>
+    </div>
+    <div class="post"><p id="offer-text"></p><a id="offer-link" target="_blank" rel="noopener noreferrer">Abrir busca de exemplo</a></div>
+    <button class="primary" id="copy" type="button">Copiar texto e link</button>
+    <p id="message" role="status"></p>
+    <label id="manual" hidden>Texto e link<textarea id="manual-text" readonly rows="5"></textarea></label>
+  </dialog>
+</body>
+</html>
